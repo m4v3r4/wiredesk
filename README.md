@@ -1,7 +1,9 @@
 # 🖥️ WireDesk
+![Flutter](https://img.shields.io/badge/built%20with-Flutter-blue)
+![License](https://img.shields.io/badge/license-GPLv3-red)
 
-**WireDesk**, Flutter ile geliştirilen hepsi bir arada bir **ağ araçları paketi**dir.  
-Modern UI ve çoklu platform desteği ile sistem yöneticileri, geliştiriciler ve ağ meraklıları için pratik çözümler sunar.  
+WireDesk, Flutter tabanlı tümsel bir **ağ araçları seti**dir.  
+Platformlar: Linux, Windows.
 
 ---
 
@@ -25,7 +27,11 @@ WireDesk şu anda aşağıdaki araçları içermektedir:
 ## 🛠️ Kurulum
 
 ```bash
-git clone https://github.com/<senin-kullanıcı-adın>/wiredesk.git
+git clone https://github.com/m4v3r4/wiredesk.git
 cd wiredesk
 flutter pub get
 flutter run
+```
+## Katkı
+
+Her türlü öneri ve katkıya açığım. Fork’la, feature branch aç ve pull request gönder.
