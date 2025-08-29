@@ -48,29 +48,32 @@ class TracerouteProvider with ChangeNotifier {
   }
 
   /// Satırı ayrıştır, RTT ve IP'yi netleştir
-  /// Satırı ayrıştır, RTT ve IP'yi netleştir
+
   String? _parseLine(String line, bool isWindows) {
     try {
       if (isWindows) {
-        // Örnek:  1    <1 ms    <1 ms    <1 ms  192.168.1.1
+        // Windows traceroute çıktısı (ör: 1    <1 ms    <1 ms    <1 ms  192.168.1.1)
         final regex = RegExp(
-          r'(\d+)\s+([<\d]+\s*ms)\s+([<\d]+\s*ms)\s+([<\d]+\s*ms)\s+([0-9.]+)',
+          r'^\s*(\d+)\s+([<\d]+\s*ms)\s+([<\d]+\s*ms)\s+([<\d]+\s*ms)\s+(\d{1,3}(?:\.\d{1,3}){3})',
         );
         final match = regex.firstMatch(line);
         if (match != null) {
           return 'Hop ${match.group(1)} | RTTs: ${match.group(2)}, ${match.group(3)}, ${match.group(4)} | IP: ${match.group(5)}';
         }
       } else {
-        // Linux/macOS örnek: 1  192.168.1.1  1.123 ms  0.987 ms  1.001 ms
+        // Linux/macOS traceroute çıktısı (ör: 1  192.168.1.1  1.123 ms  0.987 ms  1.001 ms)
         final regex = RegExp(
-          r'(\d+)\s+([0-9.]+)\s+([\d.]+ ms)\s+([\d.]+ ms)\s+([\d.]+ ms)',
+          r'^\s*(\d+)\s+(\d{1,3}(?:\.\d{1,3}){3})\s+([\d.]+ ms)\s+([\d.]+ ms)\s+([\d.]+ ms)',
         );
         final match = regex.firstMatch(line);
         if (match != null) {
           return 'Hop ${match.group(1)} | IP: ${match.group(2)} | RTTs: ${match.group(3)}, ${match.group(4)}, ${match.group(5)}';
         }
       }
-    } catch (_) {}
-    return null; // Eğer regex eşleşmezse ham satırı döndür
+    } catch (_) {
+      // regex hatalarında sessiz geç
+    }
+
+    return null; // Eşleşme olmazsa hiç göstermesin
   }
 }

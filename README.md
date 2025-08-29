@@ -1,16 +1,31 @@
-# wiredesk
+# 🖥️ WireDesk
 
-A new Flutter project.
+**WireDesk**, Flutter ile geliştirilen hepsi bir arada bir **ağ araçları paketi**dir.  
+Modern UI ve çoklu platform desteği ile sistem yöneticileri, geliştiriciler ve ağ meraklıları için pratik çözümler sunar.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Özellikler
+WireDesk şu anda aşağıdaki araçları içermektedir:
 
-A few resources to get you started if this is your first Flutter project:
+- 🌐 **Ping Tool** → Hedefe erişilebilirliği ve gecikmeyi test et
+- 🛰 **Traceroute Tool** → Ağ yolundaki hop noktalarını incele
+- 🔎 **Port Scanner** → Açık portları tarama
+- 📡 **DNS Lookup** → Alan adı çözümleme sorguları
+- ⚡ **Wake-on-LAN** → Ağ üzerinden cihaz açma
+- 🗂 **Whois Lookup** → Domain/IP Whois bilgisi
+- 🔒 **SSL/TLS Checker** → Sertifika detaylarını kontrol et
+- 📊 **Netstat / Connections** → Ağ bağlantılarını gör
+- 🚀 **Network Speed Test** → İnternet hızını ölç
+- 📱 **DeviceHunt (Network Scanner)** → Aynı ağdaki cihazları keşfet
+- 🧮 **Subnet Calculator** → Alt ağ hesaplamaları
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Kurulum
+
+```bash
+git clone https://github.com/<senin-kullanıcı-adın>/wiredesk.git
+cd wiredesk
+flutter pub get
+flutter run
